@@ -2,7 +2,7 @@
 
 // Some symbolic constants for clarity
 constexpr char number = '8';
-constexpr char quit = 'x';
+constexpr char quit = 'x'; //change q to x; chap 6 task 2
 constexpr char print = '=';
 constexpr char name = 'a';
 constexpr char let = 'L';
@@ -186,10 +186,10 @@ void calculate()
 int main() 
 try {
        string myString = "Welcome to our simple calculator.\nPlease enter expressions using floating-point numbers.";
-       
+       //chap 6 task 2
 
  cout << myString << endl;
- cout << "The operators '+, -, /, *' are available\n";
+ cout << "The operators '+, -, /, *' are available\n"; //chap 6 task 2
  
 	define_name("pi", 3.1415926535);
 	define_name("e", 2.7182818284);
