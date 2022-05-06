@@ -1,6 +1,6 @@
-#include "std_lib_facilities.h" //Include usual header
+#include "std_lib_facilities.h" 
 
-// Some symbolic constants for clarity
+
 constexpr char number = '8';
 constexpr char quit = 'x';
 constexpr char print = '=';
@@ -61,9 +61,9 @@ void set_value(string s, double d)
 		}
 	error("set: undefined variable", s);
 }
-// Variable end ///////////////////////
+ 
 
-// Token ///////////////////////
+// Token 
 class Token {
 public:
 	char kind;
@@ -74,9 +74,9 @@ public:
 	Token(char ch, double val): kind(ch), value(val) {}
 	Token(char ch, string n): kind(ch), name(n) {}
 };
-// Token end ///////////////////////
+// Token end 
 
-// Token_stream ///////////////////////
+// Token_stream 
 class Token_stream {
 public:
 	Token_stream();
@@ -172,7 +172,7 @@ void Token_stream::ignore(char c)
 	while (cin>>ch)
 		if (ch==c) return;
 }
-// Token_stream end ///////////////////////
+// Token_stream end 
 Token_stream ts;
 
 void clean_up_mess()
@@ -222,7 +222,7 @@ catch (exception& e){
 	return 2;
 }
 
-//Functions mapping grammar rules //////////////////////////
+//grammar rules 
 double primary()
 {
 	Token t = ts.get();
