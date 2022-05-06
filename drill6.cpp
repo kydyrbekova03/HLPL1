@@ -1,13 +1,12 @@
 #include "std_lib_facilities.h" //Include usual header
 
-// Some symbolic constants for clarity
 constexpr char number = '8';
 constexpr char quit = 'x'; //change q to x; chap 6 task 2
 constexpr char print = '=';
 constexpr char name = 'a';
 constexpr char let = 'L';
 constexpr char result = ';';
-const string declkey = "let"; //constexpr string since C++20 only
+const string declkey = "let"; 
 
 //function declarations
 double expression();
@@ -16,7 +15,7 @@ double term();
 double declaration();
 double statement();
 
-// Variable ///////////////////////
+// Variable
 class Variable {
 public:
 	string name;
@@ -56,9 +55,9 @@ void set_value(string s, double d)
 		}
 	error("set: undefined variable", s);
 }
-// Variable end ///////////////////////
+// end of variable
 
-// Token ///////////////////////
+// Token 
 class Token {
 public:
 	char kind;
@@ -69,9 +68,9 @@ public:
 	Token(char ch, double val): kind(ch), value(val) {}
 	Token(char ch, string n): kind(ch), name(n) {}
 };
-// Token end ///////////////////////
+// Token end 
 
-// Token_stream ///////////////////////
+// Token_stream 
 class Token_stream {
 public:
 	Token_stream();
@@ -158,7 +157,7 @@ void Token_stream::ignore(char c)
 	while (cin>>ch)
 		if (ch==c) return;
 }
-// Token_stream end ///////////////////////
+// Token_stream end 
 Token_stream ts;
 
 void clean_up_mess()
@@ -166,7 +165,7 @@ void clean_up_mess()
 	ts.ignore(print);
 }
 
-// Logically separate calculate() from the usual "boiler plate" of main 
+// function calculate() 
 void calculate()
 {
 	while (cin)
@@ -207,7 +206,6 @@ catch (exception& e){
 	return 2;
 }
 
-//Functions mapping grammar rules //////////////////////////
 double primary()
 {
 	Token t = ts.get();
